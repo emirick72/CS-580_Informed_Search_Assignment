@@ -21,7 +21,7 @@ def check_memory_limit(max_gb=4.0):
             f"(Limit: {max_gb} GB). Stopping program to prevent system from crashing."
         )
 
-def a_star_search(initial_state, heuristic_func_name="h2", max_frontier_size=1500000, max_ram_gb=4.0):
+def a_star_search(initial_state, heuristic_func_name="h2", max_frontier_size=2000000, max_ram_gb=4.0):
     """
     Perform A* Search algorithm on the given puzzle.
     """
@@ -49,7 +49,7 @@ def a_star_search(initial_state, heuristic_func_name="h2", max_frontier_size=150
 
         if len(frontier) > max_frontier_size:
             raise MemoryError(
-                f"Frontier size exceeds the max cap size of ({max_frontier_size}) states. "
+                f"Frontier size exceeds the max cap size of {max_frontier_size} states. "
                 "Stopping search now."
             )
 
