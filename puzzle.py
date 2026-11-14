@@ -1,6 +1,3 @@
-
-#NOTE: THE BELOW CODE IS FOR THE 8-PUZZLE. REWORK IT LATER FOR THE 24-PUZZLE.
-
 class PuzzleState:
     def __init__(self, board, size=3, parent=None, move=None, cost=0):
         """

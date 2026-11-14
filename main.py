@@ -1,6 +1,3 @@
-
-#NOTE: THE BELOW CODE IS FOR THE 8-PUZZLE. REWORK IT LATER FOR THE 24-PUZZLE.
-
 import sys
 from puzzle import PuzzleState
 from solver import a_star_search
