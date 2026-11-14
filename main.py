@@ -3,6 +3,7 @@
 
 import sys
 from puzzle import PuzzleState
+from solver import a_star_search
 
 def parse_input():
     """
@@ -43,15 +44,33 @@ def print_board(board, size):
 def main():
     board, size = parse_input()
     print("\nInitial Board Layout:")
-    print_board(board, size)
+
+    #print_board(board, size)
 
     initial_state = PuzzleState(board, size=size)
 
-    print(f"Heuristics for initial state:")
-    print(f"  - h1(x), Misplaced Tiles: {initial_state.h1_misplaced()}")
-    print(f"  - h2(x), Manhattan Distance: {initial_state.h2_manhatten()}")
+    print(f"Choose the heuristic you want to use:")
+    print("1. h1(x): Misplaced Tiles")
+    print("2. h2(x): Manhattan Distance")
+    user_choice = input("Enter 1 or 2: ").strip()
+
+    heuristic_choice = "h1" if user_choice == "1" else "h2"
+    print(f"\nRunning A* Search with {heuristic_choice}...")
 
     # A* SOLVER EXECUTION STUFF GOES HERE.
+    try:
+        result = a_star_search(initial_state, heuristic_func_name=heuristic_choice, max_ram_gb=3.5)
+        if result["success"]:
+            print(f"\nSuccess! The solution was found in {result['time_elapsed']:.4f} seconds.")
+            print(f"Solution Length (cost): {result['cost']}")
+            print(f"Number of States Explored: {result['explored_nodes_count']}")
+            print(f"Max Frontier Size: {result['max_frontier']}")
+            print(f"Number of Moves: {result['path']}")
+        else:
+            print("\nNo solution was found.")
+    except MemoryError as e:
+        print(f"\n[RAM Limit Protection Triggered]: {e}")
+
 
 if __name__ == "__main__":
     main()

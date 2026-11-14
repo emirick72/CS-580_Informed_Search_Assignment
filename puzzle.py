@@ -63,7 +63,7 @@ class PuzzleState:
                 count += 1
         return count
 
-    def h2_manhatten(self):
+    def h2_manhattan(self):
         """
         h2(x) heuristic function. Represents the sum of distances of every tile to its goal position.
         """
