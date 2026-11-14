@@ -56,7 +56,7 @@ def main():
     puzzle_8_medium = [1, 3, 0, 4, 2, 5, 7, 8, 6]
     puzzle_8_hard = [8, 6, 7, 2, 5, 4, 3, 0, 1]
 
-    # 24-puzzle test cases (most if not all prob won't work due to RAM contraints I put in this program due to my machine's limits. Sorry in advance :( )
+    # 24-puzzle test cases (most if not all probably won't work due to RAM contraints I put in this program due to my machine's limits.)
     puzzle_24_medium = [
         1, 2, 3, 4, 5,
         6, 7, 8, 9, 10,
