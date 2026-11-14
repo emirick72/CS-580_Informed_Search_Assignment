@@ -1,7 +1,6 @@
 # Informed Search Assignment
 
 Note: The user must have Python already installed on their local machine in order for this program script to run.
-----------------------------
 
 This assignment is a program that creates two heuristic search algorithms that find solutions to the 24-puzzle problem. I first started with the 8-puzzle problem, then adjusted the program to the 24-puzzle problem.
 
