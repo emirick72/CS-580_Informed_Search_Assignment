@@ -4,7 +4,7 @@ Note: The user must have Python already installed on their local machine in orde
 
 This assignment is a program that creates two heuristic search algorithms that find solutions to the 24-puzzle problem. I first started with solving the 8-puzzle problem, then adjusted the program to solve the 24-puzzle problem.
 
-WARNING: There is a possibility that this program might crash due to my machine not having enough RAM to solve the 24-puzzle problem (I progammed this assignment locally). During test runs, I had an average of about 5.6 GB of RAM left on my machine. I hard-coded RAM guardrails into this program so that it maxes out how much it is allowed to use (3000000 states is the maximum amount that are allowed to be searched through). I was aware that this guardrail would not allow me to solve the given 24-puzzle problem in the assignment.
+**WARNING:** There is a possibility that this program might crash due to my machine not having enough RAM to solve the 24-puzzle problem (I progammed this assignment locally). During test runs, I had an average of about 5.6 GB of RAM left on my machine. I hard-coded RAM guardrails into this program so that it maxes out how much it is allowed to use (3000000 states is the maximum amount that are allowed to be searched through). I was aware that this guardrail would not allow me to solve the given 24-puzzle problem in the assignment.
 
 -----------------------------
 ## How to execute:
