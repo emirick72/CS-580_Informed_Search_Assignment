@@ -1,5 +1,5 @@
-### Informed Search Assignment
-----------------------------
+# Informed Search Assignment
+
 Note: The user must have Python already installed on their local machine in order for this program script to run.
 ----------------------------
 
