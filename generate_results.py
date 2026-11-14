@@ -11,7 +11,7 @@ def format_board_string(board, size):
         lines.append(" " + " ".join(f"{val:2}" if val != 0 else " _" for val in row))
     return "\n".join(lines)
 
-def run_benchmark(file_handle, title, board, size, heuristics, max_ram_gb=4.0, max_frontier=2000000):
+def run_benchmark(file_handle, title, board, size, heuristics, max_ram_gb=4.0, max_frontier=3000000):
     """
     Run A* Search for the given board across the specified heuristics and logs to file.
     """
@@ -43,6 +43,7 @@ def run_benchmark(file_handle, title, board, size, heuristics, max_ram_gb=4.0, m
                 file_handle.write(f"States Explored:    {result['explored_nodes_count']}\n")
                 file_handle.write(f"Peak Frontier:      {result['max_frontier']}\n")
                 file_handle.write(f"Solution Path:      {' -> '.join(result['path'])}\n\n")
+            else:
                 file_handle.write("Status:              Failed/No solution found.\n\n")
         except MemoryError as e:
             print(f"RAM safeguard triggered for {title} ({h}): {e}")
@@ -76,7 +77,7 @@ def main():
         f.write("Informed Search (A* Search) Benchmark and Sample Solutions\n\n")
 
         run_benchmark(f, "8-Puzzle (Easy, 2 moves max)", puzzle_8_easy, 3, ["h1", "h2"])
-        run_benchmark(f, "8-Puzzle (Medium)", puzzle_8_medium, ["h1", "h2"])
+        run_benchmark(f, "8-Puzzle (Medium)", puzzle_8_medium, 3, ["h1", "h2"])
         run_benchmark(f, "8-Puzzle (Hard, 31 moves max)", puzzle_8_hard, 3, ["h1", "h2"])
 
         run_benchmark(f, "24-Puzzle (Medium)", puzzle_24_medium, 5, ["h1", "h2"], max_ram_gb=4.0)
