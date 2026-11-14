@@ -17,7 +17,7 @@ def check_memory_limit(max_gb=4.0):
     mem_usage_gb = process.memory_info().rss / (1024 ** 3)
     if mem_usage_gb > max_gb:
         raise MemoryError(
-            f"Memory limit of 4 GB has been exceeded. Script used {mem_usage_gb:.2f} GB of RAM "
+            f"Memory limit of {max_gb} GB has been exceeded. Script used {mem_usage_gb:.2f} GB of RAM "
             f"(Limit: {max_gb} GB). Stopping program to prevent system from crashing."
         )
 

@@ -65,7 +65,7 @@ def main():
             print(f"Solution Length (cost): {result['cost']}")
             print(f"Number of States Explored: {result['explored_nodes_count']}")
             print(f"Max Frontier Size: {result['max_frontier']}")
-            print(f"Number of Moves: {result['path']}")
+            print(f"Direction of Moves: {result['path']}")
         else:
             print("\nNo solution was found.")
     except MemoryError as e:
